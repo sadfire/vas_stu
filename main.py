@@ -1,5 +1,5 @@
 def add_binary(left: str, right: str) -> str:
-    result = list('0' * len(left if len(left) > len(right) else right))
+    result = list('_' * len(left if len(left) > len(right) else right))
     left, right = left[::-1], right[::-1]
 
     mem = False
@@ -23,12 +23,12 @@ def add_binary(left: str, right: str) -> str:
             result[index] = "0" if mem else "1"
 
     if mem:
-        result.insert(-1, '1')
+        result.append('1')
 
     return ''.join(result[::-1])
 
 
 if __name__ == '__main__':
-    a, b = 3268767123, 1004312656321376
+    a, b = 2, 7
     res = add_binary(bin(a)[2:], bin(b)[2:])
     print('', res, '\n', bin(a + b)[2:])
