@@ -1,5 +1,5 @@
 from random import randint
-from main import add_binary
+from add_binary import add_binary
 
 
 def test_add_binary():
