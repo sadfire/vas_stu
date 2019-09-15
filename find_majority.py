@@ -6,7 +6,6 @@ def find_majority(nums: Generator) -> int:
     generator_len = 0
     nums_dict = {}
     for num in nums:
-        print(f"num = {num}")
         is_exsist = False
         for key in nums_dict.keys():
             if key == num:
