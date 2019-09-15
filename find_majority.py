@@ -1,28 +1,21 @@
-from typing import Generator
+from typing import Generator, Optional
 from random import randint
 
 
-def find_majority(nums: Generator) -> int:
+def find_majority(nums: Generator) -> Optional[str]:
     generator_len = 0
-    nums_dict = {}
+    frequency = {}
+
+    max_value = (None, None)
+
     for num in nums:
-        is_exsist = False
-        for key in nums_dict.keys():
-            if key == num:
-                nums_dict[key] += 1
-                is_exsist = True
-        if not is_exsist:
-            nums_dict[num] = 1
+        frequency[num] = frequency.get(num, 0) + 1
         generator_len += 1
 
-    max_value = 0
-    key_of_max_value = 0
-    for key1, value1 in nums_dict.items():
-        if value1 > max_value:
-            max_value = value1
-            key_of_max_value = key1
+        if max_value[1] is None or max_value[1] < frequency[num]:
+            max_value = num, frequency[num]
 
-    return key_of_max_value if max_value > (generator_len / 2) else 'majority not found'
+    return max_value[0] if max_value is not None and max_value[1] > (generator_len / 2) else None
 
 
 def random_list():

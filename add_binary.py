@@ -32,3 +32,4 @@ if __name__ == '__main__':
     a, b = 2, 7
     res = add_binary(bin(a)[2:], bin(b)[2:])
     print('', res, '\n', bin(a + b)[2:])
+
