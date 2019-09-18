@@ -17,16 +17,15 @@ def test_add_binary():
 
 def test_move_zeros():
     for _ in range(1000):
-        zeros = randint(1, 50)
-        other_numbers = randint(1, 50)
+        zeros = randint(1, 20)
+        other_numbers = randint(1, 20)
         right_list = [1 for _ in range(other_numbers)] + [0 for _ in range(zeros)]
         shuffled_list = copy(right_list)
         shuffle(shuffled_list)
-        result_list = move_zeros(shuffled_list)
+        result_list = move_zeros(copy(shuffled_list))
         if not right_list == result_list:
-            print(f"right_list = {right_list} \n result_list = {result_list} \n")
+            print(f"right_list = {right_list} \n result_list = {result_list} \n shuffled_list = {shuffled_list} \n")
 
 
 if __name__ == '__main__':
-    test_add_binary()
     test_move_zeros()
