@@ -25,5 +25,5 @@ def move_zeros(numbers: list) -> list:
     return numbers
 
 if __name__ == '__main__':
-    numbers = [0, 1, 1, 1]
+    numbers = [123, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 111, 222, 333]
     print(move_zeros(numbers))
