@@ -2,6 +2,7 @@ from random import randint, shuffle
 from add_binary import add_binary
 from copy import copy
 from move_zeros import move_zeros
+from string_tasks import find_len_substring_slow
 
 
 def test_add_binary():
@@ -23,7 +24,7 @@ def test_move_zeros():
         shuffled_list = copy(right_list)
         shuffle(shuffled_list)
         result_list = move_zeros(copy(shuffled_list))
-        if not right_list == result_list:
+        if right_list != result_list:
             print(f"right_list = {right_list} \n result_list = {result_list} \n shuffled_list = {shuffled_list} \n")
 
 
